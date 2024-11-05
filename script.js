@@ -25,19 +25,21 @@ if (personalMovieDB.count <= 10) {
 
 // Повторяем вопросы пользователю, если его ответ не подходит по условию
 for (let i = 0; i < 2; i++) {
-  let movieTitle = prompt('Один из последних просмотренных фильмов', '');
-  let movieRate = +prompt('На сколько оцените его?', '');
+  const movieTitle = prompt('Один из последних просмотренных фильмов', '');
+  const movieRate = +prompt('На сколько оцените его?', '');
 
-  if (movieTitle === '' || movieTitle === null || movieTitle.length > 50) {
-    i--;
-  } else {
+  if (movieTitle !== '' && movieRate !== '' && movieTitle !== null && movieRate !== null && movieTitle.length <= 50) {
     personalMovieDB.movies[movieTitle] = movieRate;
+  } else {
+    i--;
   }
 }
 
 console.log(personalMovieDB);
 
-// task loop inside loop
+// Tasks (practice)
+
+// task: make figure using loop
 // let result = '';
 // let strLength = 7;
 
@@ -49,7 +51,7 @@ console.log(personalMovieDB);
 // }
 
 // console.log(result);
-// result ->
+// result must be->
 // *
 // **
 // ***
@@ -69,7 +71,7 @@ console.log(personalMovieDB);
 //   }
 // }
 
-// task: make figure using code
+// task 2: make figure using loop
 
 // const lines = 5;
 // let result = '';
@@ -85,7 +87,7 @@ console.log(personalMovieDB);
 // }
 
 // console.log(result);
-// result ->
+// result must be->
 //      *
 //     ***
 //    *****
