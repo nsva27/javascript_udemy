@@ -1,22 +1,41 @@
 'use strict';
 
-// personal movie data base
-// let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// Записываем ответ пользователя в переменную
+let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-// const personalMovieDB = {
-//   count: numberOfFilms,
-//   movies: {},
-//   actors: {},
-//   genres: [],
-//   privat: false,
-// };
+// Персональная база фильмов
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
+};
 
-// let a = prompt('Один из последних просмотренных фильмов', ''),
-//   b = +prompt('На сколько оцените его?', '');
+// Выводим сообщение в зависимости от количества просмотренных фильмов
+if (personalMovieDB.count <= 10) {
+  console.log('Просмотрено довольно мало фильмов.');
+} else if (personalMovieDB.count > 10 && personalMovieDB.count <= 30) {
+  console.log('Вы классический зритель.');
+} else if (personalMovieDB.count > 30) {
+  console.log('Вы киноман!');
+} else {
+  console.log('Произошла ошибка.');
+}
 
-// personalMovieDB.movies[a] = b;
+// Повторяем вопросы пользователю, если его ответ не подходит по условию
+for (let i = 0; i < 2; i++) {
+  let movieTitle = prompt('Один из последних просмотренных фильмов', '');
+  let movieRate = +prompt('На сколько оцените его?', '');
 
-// console.log(personalMovieDB);
+  if (movieTitle === '' || movieTitle === null || movieTitle.length > 50) {
+    i--;
+  } else {
+    personalMovieDB.movies[movieTitle] = movieRate;
+  }
+}
+
+console.log(personalMovieDB);
 
 // task loop inside loop
 // let result = '';
