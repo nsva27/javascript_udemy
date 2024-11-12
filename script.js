@@ -233,3 +233,41 @@ showMyDB(personalMovieDB.privat);
 // }
 
 // getCoupeNumber(12);
+
+
+// Задача. Получить целое число, вернуть результат в часах и минутах.
+// function getTimeFromMinutes(minutesTotal) {
+//   if (typeof minutesTotal !== 'number' || !Number.isInteger(minutesTotal) || minutesTotal < 0) {
+//     return "Ошибка, проверьте данные";
+//   }
+
+//   const hours = Math.floor(minutesTotal / 60);
+//   const minutes = minutesTotal % 60;
+//   let hoursStr = '';
+
+//   switch(hours) {
+//     case 0:
+//       hoursStr = 'часов';
+//       break;
+//     case 1:
+//       hoursStr = 'час';
+//       break;
+//     case 2:
+//     case 3:
+//     case 4:
+//       hoursStr = 'часа';
+//       break;
+//     default:
+//       hoursStr = 'часов';
+//   };
+
+//   return `Это ${hours} ${hoursStr} и ${minutes} минут`;
+// }
+
+// console.log(getTimeFromMinutes(190));
+
+
+// // Место для второй задачи
+// function findMaxNumber() {
+
+// }
