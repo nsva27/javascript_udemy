@@ -88,8 +88,8 @@ function showMyDB(hidden) {
 showMyDB(personalMovieDB.privat);
 
 
-// Tasks (practice)
-// task: make figure using loop
+// Задачи, практика.
+// Задача. Сделать фигуру, используя циклы.
 // let result = '';
 // let strLength = 7;
 
@@ -109,7 +109,7 @@ showMyDB(personalMovieDB.privat);
 // *****
 // ******
 
-// loop marks
+// Loop marks.
 // first: for (let i = 0; i < 3; i++) {
 //   console.log(`First level ${i}`);
 //   for (let j = 0; j < 3; j++) {
@@ -122,7 +122,7 @@ showMyDB(personalMovieDB.privat);
 // }
 
 
-// task 2: make figure using loop
+// Задача. Сделать фигуру 2, используя вложенные циклы.
 // const lines = 5;
 // let result = '';
 
@@ -146,7 +146,7 @@ showMyDB(personalMovieDB.privat);
 // ***********
 
 
-// Functions
+// Функции.
 // function showFirstMessage(message) {
 //   console.log(message);
 // }
@@ -187,17 +187,49 @@ showMyDB(personalMovieDB.privat);
 //   return str;
 // }
 
-console.log(getMathResult(5, 10));
+// console.log(getMathResult(5, 10));
 
 
 // Udemy 27. Методы строк и чисел.
-const str = 'test';
-const fruit = 'some fruit';
-const logg = 'Hello world!';
-const test = '12.2px';
+// const str = 'test';
+// const fruit = 'some fruit';
+// const logg = 'Hello world!';
+// const test = '12.2px';
 
-console.log(str.toUpperCase());
-console.log(fruit.indexOf('fruit'));
-console.log(logg.slice(0, 5));
-console.log(parseInt(test));
-console.log(parseFloat(test));
+// console.log(str.toUpperCase());
+// console.log(fruit.indexOf('fruit'));
+// console.log(logg.slice(0, 5));
+// console.log(parseInt(test));
+// console.log(parseFloat(test));
+
+
+// Задача. Вернуть номер купе, по номеру места.
+// function getCoupeNumber(placeNumber) {
+//   const coupes = [
+//     [1, 2, 3, 4],
+//     [5, 6, 7, 8],
+//     [9, 10, 11, 12],
+//     [13, 14, 15, 16],
+//     [17, 18, 19, 20],
+//     [21, 22, 23, 24],
+//     [25, 26, 27, 28],
+//     [29, 30, 31, 32],
+//     [33, 34, 35, 36],
+//   ];
+
+//   for (let i = 0; i < coupes.length; i++) {
+//     if (placeNumber === 0 || placeNumber > 36) {
+//       return "Таких мест в вагоне не существует";
+//     } else if (typeof placeNumber !== 'number' || placeNumber < 0 || !Number.isInteger(placeNumber)) {
+//       return "Ошибка. Проверьте правильность введенного номера места";
+//     } else {
+//       for (let j = 0; j < coupes[i].length; j++) {
+//         if (coupes[i][j] === placeNumber) {
+//           return i + 1;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// getCoupeNumber(12);
