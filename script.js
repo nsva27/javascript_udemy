@@ -267,7 +267,17 @@ showMyDB(personalMovieDB.privat);
 // console.log(getTimeFromMinutes(190));
 
 
-// // Место для второй задачи
-// function findMaxNumber() {
-
+// Задача. Вернуть самое большое из четырех чисел.
+// function findMaxNumber(a, b, c, d) {
+//   if (typeof a !== 'number' ||
+//       typeof b !== 'number' ||
+//       typeof c !== 'number' ||
+//       typeof d !== 'number'
+//   ) {
+//     return 0;
+//   } else {
+//     return Math.max(a, b, c, d);
+//   }
 // }
+
+// console.log(findMaxNumber(21, 4, 7.5, 24));
