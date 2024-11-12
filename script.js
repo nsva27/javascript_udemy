@@ -187,4 +187,17 @@ showMyDB(personalMovieDB.privat);
 //   return str;
 // }
 
-// console.log(getMathResult(5, 50));
+console.log(getMathResult(5, 10));
+
+
+// Udemy 27. Методы строк и чисел.
+const str = 'test';
+const fruit = 'some fruit';
+const logg = 'Hello world!';
+const test = '12.2px';
+
+console.log(str.toUpperCase());
+console.log(fruit.indexOf('fruit'));
+console.log(logg.slice(0, 5));
+console.log(parseInt(test));
+console.log(parseFloat(test));
