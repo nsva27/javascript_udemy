@@ -281,3 +281,31 @@ showMyDB(personalMovieDB.privat);
 // }
 
 // console.log(findMaxNumber(21, 4, 7.5, 24));
+
+
+// Задача. Вернуть строку, в которой выведены числа Фибоначчи.
+function fib(num) {
+  if (typeof num !== 'number' || num <= 0 || !Number.isInteger(num)) {
+    return '';
+  }
+
+  let str = '';
+  let first = 0;
+  let second = 1;
+
+  for (let i = 0; i < num; i++) {
+    if (i + 1 === num) {
+      str += `${first}`;
+    } else {
+      str += `${first} `;
+    }
+
+    let third = first + second;
+    first = second;
+    second = third;
+  }
+
+  return str;
+}
+
+console.log(fib(7));
