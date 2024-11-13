@@ -28,7 +28,7 @@ const personalMovieDB = {
 // Записать в массив любимые жанры фильмов
 function writeYourGenres(genres) {
   for (let i = 0; i < 3; i++) {
-    const genre = prompt(`Ваш любимый жанр под номером ${i + 1}?`, '');
+    const genre = prompt(`Ваш любимый жанр под номером ${i + 1}?`, '').trim();
 
     // if (genre === null || genre === '') {
     //   i--;
@@ -44,8 +44,8 @@ function writeYourGenres(genres) {
 // Записать ответы пользователя в объект в формате ключ - значение
 function rememberMyFilms() {
   for (let i = 0; i < 2; i++) {
-    const movieTitle = prompt('Один из последних просмотренных фильмов', '');
-    const movieRate = +prompt('На сколько оцените его?', '');
+    const movieTitle = prompt('Один из последних просмотренных фильмов', '').trim();
+    const movieRate = +prompt('На сколько оцените его?', '').trim();
 
     // Повторить вопросы, если ответ не подходит по условию
     if (movieTitle !== '' && movieRate !== '' && movieTitle !== null && movieRate !== null && movieTitle.length <= 50 && typeof movieRate === 'number' && !isNaN(movieRate)) {
@@ -284,28 +284,78 @@ showMyDB(personalMovieDB.privat);
 
 
 // Задача. Вернуть строку, в которой выведены числа Фибоначчи.
-function fib(num) {
-  if (typeof num !== 'number' || num <= 0 || !Number.isInteger(num)) {
-    return '';
+// function fib(num) {
+//   if (typeof num !== 'number' || num <= 0 || !Number.isInteger(num)) {
+//     return '';
+//   }
+
+//   let str = '';
+//   let first = 0;
+//   let second = 1;
+
+//   for (let i = 0; i < num; i++) {
+//     if (i + 1 === num) {
+//       str += `${first}`;
+//     } else {
+//       str += `${first} `;
+//     }
+
+//     let third = first + second;
+//     first = second;
+//     second = third;
+//   }
+
+//   return str;
+// }
+
+// console.log(fib(7));
+
+
+// Объекты. Деструктурицазия объектов.
+// const user = {
+//   name: 'Valera',
+//   age: 29,
+//   isMarried: true,
+//   hobbies: {
+//     guitar: true,
+//     drawing: true,
+//   },
+// };
+
+// Метод перебора объектов 'for in'.
+// for (let key in user) {
+//   if (typeof user[key] === 'object') {
+//     for (let k in user[key]) {
+//       console.log(`Свойство ${k} имеет значение ${user[key][k]}`);
+//     }
+//   } else {
+//     console.log(`Свойство ${key} имеет значение ${user[key]}`);
+//   }
+// }
+
+// // Деструктуризация
+// const { guitar, drawing } = user.hobbies;
+
+// console.log(Object.keys(user)); // -> ['name', 'age', 'isMarried', 'hobbies']
+
+
+// Массивы, псевдомассивы.
+const arr = [2, 34, 5, 'str', false];
+
+// arr.pop();
+// arr.push(240);
+// console.log(arr);
+
+// // Метод перебора массивов 'for of'.
+// for (let value of arr) {
+//   console.log(value);
+// }
+
+// Метод перебора массивов 'forEach()'.
+arr.forEach((item, i) => {
+  if (typeof item === 'number') {
+    console.log(`Элемент ${item * 2} под индексом ${i}`);
+  } else {
+    console.log(`Элемент ${item} под индексом ${i}`);
   }
-
-  let str = '';
-  let first = 0;
-  let second = 1;
-
-  for (let i = 0; i < num; i++) {
-    if (i + 1 === num) {
-      str += `${first}`;
-    } else {
-      str += `${first} `;
-    }
-
-    let third = first + second;
-    first = second;
-    second = third;
-  }
-
-  return str;
-}
-
-console.log(fib(7));
+});
