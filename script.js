@@ -311,7 +311,7 @@ showMyDB(personalMovieDB.privat);
 // console.log(fib(7));
 
 
-// Объекты. Деструктурицазия объектов.
+// Udemy 31. Объекты. Деструктурицазия объектов.
 // const user = {
 //   name: 'Valera',
 //   age: 29,
@@ -339,8 +339,8 @@ showMyDB(personalMovieDB.privat);
 // console.log(Object.keys(user)); // -> ['name', 'age', 'isMarried', 'hobbies']
 
 
-// Массивы, псевдомассивы.
-const arr = [2, 34, 5, 'str', false];
+// Udemy 32. Массивы, псевдомассивы.
+// const arr = [2, 34, 5, 'str', false];
 
 // arr.pop();
 // arr.push(240);
@@ -352,10 +352,29 @@ const arr = [2, 34, 5, 'str', false];
 // }
 
 // Метод перебора массивов 'forEach()'.
-arr.forEach((item, i) => {
-  if (typeof item === 'number') {
-    console.log(`Элемент ${item * 2} под индексом ${i}`);
-  } else {
-    console.log(`Элемент ${item} под индексом ${i}`);
-  }
-});
+// arr.forEach((item, i) => {
+//   if (typeof item === 'number') {
+//     console.log(`Элемент ${item * 2} под индексом ${i}`);
+//   } else {
+//     console.log(`Элемент ${item} под индексом ${i}`);
+//   }
+// });
+
+// Метод split(). Разбивает строку на элементы массива.
+const str = 'aaa, fff, ddd, kkkkk, bbb, sss, ccc';
+const arrOfWords = str.split(', ');
+console.log(arrOfWords);
+
+// Метод join(). Склеивает элементы массива в строку.
+console.log(arrOfWords.join('; '));
+
+// Метод sort(). Сортирует элементы массива.
+console.log(arrOfWords.sort());
+// Чтобы метод правильно работал с числами, передаем в него callback.
+const arrOfNumbers = [25, 2, 234, 41, 1, 64, 111, 33];
+function compareNum(a, b) {
+  return a - b;
+}
+
+console.log(arrOfNumbers.sort(compareNum));
+
