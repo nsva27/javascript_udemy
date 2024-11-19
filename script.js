@@ -360,21 +360,92 @@ showMyDB(personalMovieDB.privat);
 //   }
 // });
 
-// Метод split(). Разбивает строку на элементы массива.
-const str = 'aaa, fff, ddd, kkkkk, bbb, sss, ccc';
-const arrOfWords = str.split(', ');
-console.log(arrOfWords);
+// const str = 'aaa, fff, ddd, kkkkk, bbb, sss, ccc';
+// const arrOfWords = str.split(', '); // Метод split(). Разбивает строку на элементы массива.
+// console.log(arrOfWords);
 
-// Метод join(). Склеивает элементы массива в строку.
-console.log(arrOfWords.join('; '));
+// console.log(arrOfWords.join('; ')); // Метод join(). Склеивает элементы массива в строку.
 
-// Метод sort(). Сортирует элементы массива.
-console.log(arrOfWords.sort());
-// Чтобы метод правильно работал с числами, передаем в него callback.
-const arrOfNumbers = [25, 2, 234, 41, 1, 64, 111, 33];
-function compareNum(a, b) {
-  return a - b;
-}
+// console.log(arrOfWords.sort()); // Метод sort(). Сортирует элементы массива.
+// // Чтобы метод правильно работал с числами, передаем в него callback.
+// const arrOfNumbers = [25, 2, 234, 41, 1, 64, 111, 33];
+// function compareNum(a, b) {
+//   return a - b;
+// }
 
-console.log(arrOfNumbers.sort(compareNum));
+// console.log(arrOfNumbers.sort(compareNum));
 
+
+// Udemy 34. Передача по ссылке и по значению.
+// По значению (примитивы).
+// const numA = 10;
+// const numB = numA + 20;
+// console.log(`a - ${numA}, b - ${numB}`); // -> a - 10, b - 30
+
+// По ссылке (объекты).
+const user = {
+  name: 'Nik',
+  age: 30,
+  isMarried: true,
+  hobbies: [
+    'guitar',
+    'workout',
+    'books',
+  ],
+};
+
+// Неглубокая копия объекта при помощи for in.
+// function makeUserCopy(mainUser) {
+//   let userCopy = {};
+
+//   for (let key in mainUser) {
+//     userCopy[key] = mainUser[key];
+//   }
+
+//   return userCopy;
+// }
+
+// const userCopy = makeUserCopy(user);
+// userCopy.name = 'Alex';
+// console.log(user);
+// console.log(userCopy);
+
+// Неглубокая копия объекта при помощи Object.assign().
+// const objCopy = Object.assign({}, user);
+// objCopy.name = 'Wilson';
+// console.log(objCopy);
+
+// Неглубокая копия объекта при помощи spread - оператора.
+// const objCopy = { ...user };
+// objCopy.name = 'Jack';
+// console.log(objCopy);
+
+// Глубокая копия объекта при помощи JSON.
+// const userCopy = JSON.parse(JSON.stringify(user));
+// userCopy.hobbies[2] = 'running';
+// console.log(userCopy);
+
+// Копирование массивов: for, for of, slice(), spread, JSON.
+// const arr = [1, 33, 22, 55, 44];
+// console.log(arr);
+
+// function makeArrCopy(array) {
+//   const copy = [];
+
+//   for (let i = 0; i < array.length; i++) {
+//     copy[i] = array[i];
+//   }
+
+//   return copy;
+// }
+
+// const arrCopy = makeArrCopy(arr);
+
+// const forOfArrCopy = [];
+// for (let value of arr) {
+//   arrCopy.push(value);
+// }
+
+// const sliceArrCopy = arr.slice('');
+// const spreadArrCopy = [...arr];
+// const arrCopy = JSON.parse(JSON.stringify(arr));
