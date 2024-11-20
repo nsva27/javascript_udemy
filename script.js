@@ -449,3 +449,41 @@ const user = {
 // const sliceArrCopy = arr.slice('');
 // const spreadArrCopy = [...arr];
 // const arrCopy = JSON.parse(JSON.stringify(arr));
+
+// Task.
+const personalPlanPeter = {
+  name: "Peter",
+  age: "30",
+  skills: {
+    languages: ['ru', 'ua'],
+    programmingLangs: {
+      js: '20%',
+      php: '10%'
+    },
+    exp: '1 month'
+  },
+};
+
+function showExperience(plan) {
+  const { exp } = plan.skills;
+
+  return exp;
+}
+
+console.log(showExperience(personalPlanPeter));
+
+function showProgrammingLangs(plan) {
+  let str = '';
+  const { programmingLangs } = plan.skills;
+
+  for (let key in programmingLangs) {
+    if (key) {
+      str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+    } else {
+      return str;
+    }
+  }
+  return str;
+}
+
+console.log(showProgrammingLangs(personalPlanPeter));
