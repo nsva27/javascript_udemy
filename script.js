@@ -450,7 +450,7 @@ const user = {
 // const spreadArrCopy = [...arr];
 // const arrCopy = JSON.parse(JSON.stringify(arr));
 
-// Task.
+// Task 10.
 const personalPlanPeter = {
   name: "Peter",
   age: "30",
