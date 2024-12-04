@@ -451,39 +451,62 @@ const user = {
 // const arrCopy = JSON.parse(JSON.stringify(arr));
 
 // Task 10.
-const personalPlanPeter = {
-  name: "Peter",
-  age: "30",
-  skills: {
-    languages: ['ru', 'ua'],
-    programmingLangs: {
-      js: '20%',
-      php: '10%'
-    },
-    exp: '1 month'
-  },
-};
+// const personalPlanPeter = {
+//   name: "Peter",
+//   age: "30",
+//   skills: {
+//     languages: ['ru', 'ua'],
+//     programmingLangs: {
+//       js: '20%',
+//       php: '10%'
+//     },
+//     exp: '1 month'
+//   },
+// };
 
-function showExperience(plan) {
-  const { exp } = plan.skills;
+// function showExperience(plan) {
+//   const { exp } = plan.skills;
 
-  return exp;
-}
+//   return exp;
+// }
 
-console.log(showExperience(personalPlanPeter));
+// console.log(showExperience(personalPlanPeter));
 
-function showProgrammingLangs(plan) {
-  let str = '';
-  const { programmingLangs } = plan.skills;
+// function showProgrammingLangs(plan) {
+//   let str = '';
+//   const { programmingLangs } = plan.skills;
 
-  for (let key in programmingLangs) {
-    if (key) {
-      str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
-    } else {
-      return str;
+//   for (let key in programmingLangs) {
+//     if (key) {
+//       str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+//     } else {
+//       return str;
+//     }
+//   }
+//   return str;
+// }
+
+// console.log(showProgrammingLangs(personalPlanPeter));
+
+// Task 11.
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+const allCurrencies = [...baseCurrencies, ...additionalCurrencies];
+
+function availableCurr(allCurrencies, absentCurrencies) {
+  let result = 'Доступные валюты:\n';
+  if (allCurrencies.length === 0) {
+    return 'Нет доступных валют';
+  } else {
+    for (let i = 0; i < allCurrencies.length; i++) {
+      if (absentCurrencies && absentCurrencies === allCurrencies[i]) {
+        allCurrencies.splice(i, 1);
+      } else {
+        result += `${allCurrencies[i]}\n`;
+      }
     }
+    return result;
   }
-  return str;
 }
 
-console.log(showProgrammingLangs(personalPlanPeter));
+console.log(availableCurr(allCurrencies, 'CNY'));
