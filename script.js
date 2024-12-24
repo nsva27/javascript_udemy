@@ -258,3 +258,207 @@ personalMovieDB.showMyDB(this.privat);
 // }
 
 // console.log(fib(7));
+<<<<<<< HEAD
+=======
+
+
+// Udemy 31. Объекты. Деструктурицазия объектов.
+// const user = {
+//   name: 'Valera',
+//   age: 29,
+//   isMarried: true,
+//   hobbies: {
+//     guitar: true,
+//     drawing: true,
+//   },
+// };
+
+// Метод перебора объектов 'for in'.
+// for (let key in user) {
+//   if (typeof user[key] === 'object') {
+//     for (let k in user[key]) {
+//       console.log(`Свойство ${k} имеет значение ${user[key][k]}`);
+//     }
+//   } else {
+//     console.log(`Свойство ${key} имеет значение ${user[key]}`);
+//   }
+// }
+
+// // Деструктуризация
+// const { guitar, drawing } = user.hobbies;
+
+// console.log(Object.keys(user)); // -> ['name', 'age', 'isMarried', 'hobbies']
+
+
+// Udemy 32. Массивы, псевдомассивы.
+// const arr = [2, 34, 5, 'str', false];
+
+// arr.pop();
+// arr.push(240);
+// console.log(arr);
+
+// // Метод перебора массивов 'for of'.
+// for (let value of arr) {
+//   console.log(value);
+// }
+
+// Метод перебора массивов 'forEach()'.
+// arr.forEach((item, i) => {
+//   if (typeof item === 'number') {
+//     console.log(`Элемент ${item * 2} под индексом ${i}`);
+//   } else {
+//     console.log(`Элемент ${item} под индексом ${i}`);
+//   }
+// });
+
+// const str = 'aaa, fff, ddd, kkkkk, bbb, sss, ccc';
+// const arrOfWords = str.split(', '); // Метод split(). Разбивает строку на элементы массива.
+// console.log(arrOfWords);
+
+// console.log(arrOfWords.join('; ')); // Метод join(). Склеивает элементы массива в строку.
+
+// console.log(arrOfWords.sort()); // Метод sort(). Сортирует элементы массива.
+// // Чтобы метод правильно работал с числами, передаем в него callback.
+// const arrOfNumbers = [25, 2, 234, 41, 1, 64, 111, 33];
+// function compareNum(a, b) {
+//   return a - b;
+// }
+
+// console.log(arrOfNumbers.sort(compareNum));
+
+
+// Udemy 34. Передача по ссылке и по значению.
+// По значению (примитивы).
+// const numA = 10;
+// const numB = numA + 20;
+// console.log(`a - ${numA}, b - ${numB}`); // -> a - 10, b - 30
+
+// По ссылке (объекты).
+const user = {
+  name: 'Nik',
+  age: 30,
+  isMarried: true,
+  hobbies: [
+    'guitar',
+    'workout',
+    'books',
+  ],
+};
+
+// Неглубокая копия объекта при помощи for in.
+// function makeUserCopy(mainUser) {
+//   let userCopy = {};
+
+//   for (let key in mainUser) {
+//     userCopy[key] = mainUser[key];
+//   }
+
+//   return userCopy;
+// }
+
+// const userCopy = makeUserCopy(user);
+// userCopy.name = 'Alex';
+// console.log(user);
+// console.log(userCopy);
+
+// Неглубокая копия объекта при помощи Object.assign().
+// const objCopy = Object.assign({}, user);
+// objCopy.name = 'Wilson';
+// console.log(objCopy);
+
+// Неглубокая копия объекта при помощи spread - оператора.
+// const objCopy = { ...user };
+// objCopy.name = 'Jack';
+// console.log(objCopy);
+
+// Глубокая копия объекта при помощи JSON.
+// const userCopy = JSON.parse(JSON.stringify(user));
+// userCopy.hobbies[2] = 'running';
+// console.log(userCopy);
+
+// Копирование массивов: for, for of, slice(), spread, JSON.
+// const arr = [1, 33, 22, 55, 44];
+// console.log(arr);
+
+// function makeArrCopy(array) {
+//   const copy = [];
+
+//   for (let i = 0; i < array.length; i++) {
+//     copy[i] = array[i];
+//   }
+
+//   return copy;
+// }
+
+// const arrCopy = makeArrCopy(arr);
+
+// const forOfArrCopy = [];
+// for (let value of arr) {
+//   arrCopy.push(value);
+// }
+
+// const sliceArrCopy = arr.slice('');
+// const spreadArrCopy = [...arr];
+// const arrCopy = JSON.parse(JSON.stringify(arr));
+
+// Task 10.
+// const personalPlanPeter = {
+//   name: "Peter",
+//   age: "30",
+//   skills: {
+//     languages: ['ru', 'ua'],
+//     programmingLangs: {
+//       js: '20%',
+//       php: '10%'
+//     },
+//     exp: '1 month'
+//   },
+// };
+
+// function showExperience(plan) {
+//   const { exp } = plan.skills;
+
+//   return exp;
+// }
+
+// console.log(showExperience(personalPlanPeter));
+
+// function showProgrammingLangs(plan) {
+//   let str = '';
+//   const { programmingLangs } = plan.skills;
+
+//   for (let key in programmingLangs) {
+//     if (key) {
+//       str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+//     } else {
+//       return str;
+//     }
+//   }
+//   return str;
+// }
+
+// console.log(showProgrammingLangs(personalPlanPeter));
+
+// Task 11.
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+const allCurrencies = [...baseCurrencies, ...additionalCurrencies];
+
+function availableCurr(allCurrencies, absentCurrencies) {
+  let result = 'Доступные валюты:\n';
+  if (allCurrencies.length === 0) {
+    return 'Нет доступных валют';
+  } else {
+    for (let i = 0; i < allCurrencies.length; i++) {
+      if (absentCurrencies && absentCurrencies === allCurrencies[i]) {
+        allCurrencies.splice(i, 1);
+      } else {
+        result += `${allCurrencies[i]}\n`;
+      }
+    }
+    return result;
+  }
+}
+
+console.log(availableCurr(allCurrencies, 'CNY'));
+>>>>>>> 49a11fc88749bdea6d70e34134f15ab465001c58
