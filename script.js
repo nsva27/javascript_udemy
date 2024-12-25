@@ -47,6 +47,14 @@ const personalMovieDB = {
   showMyDB: function(hidden) {
     (!hidden) ? console.log(this) : console.log('Sorry, data base is privat.');
   },
+  toggleVisibleMyDB: function() {
+    if (this.privat) {
+      this.privat = false;
+    } else {
+      this.privat = true;
+    }
+  },
 };
 
-personalMovieDB.showMyDB(this.privat);
+personalMovieDB.toggleVisibleMyDB();
+personalMovieDB.showMyDB(personalMovieDB.privat);
