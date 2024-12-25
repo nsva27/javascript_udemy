@@ -5,14 +5,13 @@
 let numberOfFilms;
 
 // Записать ответ пользователя в переменную
-function start() {
-  numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-
-  // Повторить вопрос, если ответ соответствует условию
-  while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-  }
-}
+// function start() {
+//   numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//   // Повторить вопрос, если ответ соответствует условию
+//   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//   }
+// }
 
 // start();
 
@@ -23,21 +22,36 @@ const personalMovieDB = {
   actors: {},
   genres: [],
   privat: false,
+  start: function () {
+    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    // Повторить вопрос, если ответ соответствует условию
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+      numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    }
+  },
+  writeYourGenres: function (genres) {
+    for (let i = 0; i < 3; i++) {
+      const genre = prompt(`Ваш любимый жанр под номером ${i + 1}?`, '').trim();
+      (genre === null || genre == '') ? i-- : genres[i] = genre;
+    }
+  },
+
+
 };
 
 // Записать в массив любимые жанры фильмов
-function writeYourGenres(genres) {
-  for (let i = 0; i < 3; i++) {
-    const genre = prompt(`Ваш любимый жанр под номером ${i + 1}?`, '').trim();
+// function writeYourGenres(genres) {
+//   for (let i = 0; i < 3; i++) {
+//     const genre = prompt(`Ваш любимый жанр под номером ${i + 1}?`, '').trim();
 
-    // if (genre === null || genre === '') {
-    //   i--;
-    // } else {
-    //   genres[i] = genre;
-    // }
-    (genre === null || genre == '') ? i-- : genres[i] = genre;
-  }
-}
+//     // if (genre === null || genre === '') {
+//     //   i--;
+//     // } else {
+//     //   genres[i] = genre;
+//     // }
+//     (genre === null || genre == '') ? i-- : genres[i] = genre;
+//   }
+// }
 
 // writeYourGenres(personalMovieDB.genres);
 
@@ -383,16 +397,16 @@ showMyDB(personalMovieDB.privat);
 // console.log(`a - ${numA}, b - ${numB}`); // -> a - 10, b - 30
 
 // По ссылке (объекты).
-const user = {
-  name: 'Nik',
-  age: 30,
-  isMarried: true,
-  hobbies: [
-    'guitar',
-    'workout',
-    'books',
-  ],
-};
+// const user = {
+//   name: 'Nik',
+//   age: 30,
+//   isMarried: true,
+//   hobbies: [
+//     'guitar',
+//     'workout',
+//     'books',
+//   ],
+// };
 
 // Неглубокая копия объекта при помощи for in.
 // function makeUserCopy(mainUser) {
@@ -489,24 +503,26 @@ const user = {
 // console.log(showProgrammingLangs(personalPlanPeter));
 
 // Task 11.
-const baseCurrencies = ['USD', 'EUR'];
-const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
-const allCurrencies = [...baseCurrencies, ...additionalCurrencies];
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+// const allCurrencies = [...baseCurrencies, ...additionalCurrencies];
 
-function availableCurr(allCurrencies, absentCurrencies) {
-  let result = 'Доступные валюты:\n';
-  if (allCurrencies.length === 0) {
-    return 'Нет доступных валют';
-  } else {
-    for (let i = 0; i < allCurrencies.length; i++) {
-      if (absentCurrencies && absentCurrencies === allCurrencies[i]) {
-        allCurrencies.splice(i, 1);
-      } else {
-        result += `${allCurrencies[i]}\n`;
-      }
-    }
-    return result;
-  }
-}
+// function availableCurr(allCurrencies, absentCurrencies) {
+//   let result = 'Доступные валюты:\n';
+//   if (allCurrencies.length === 0) {
+//     return 'Нет доступных валют';
+//   } else {
+//     for (let i = 0; i < allCurrencies.length; i++) {
+//       if (absentCurrencies && absentCurrencies === allCurrencies[i]) {
+//         allCurrencies.splice(i, 1);
+//       } else {
+//         result += `${allCurrencies[i]}\n`;
+//       }
+//     }
+//     return result;
+//   }
+// }
 
-console.log(availableCurr(allCurrencies, 'CNY'));
+// console.log(availableCurr(allCurrencies, 'CNY'));
+
+console.log([1, 2, 3]);
