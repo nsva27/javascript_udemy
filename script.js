@@ -43,6 +43,10 @@ const personalMovieDB = {
  
       (genre === null || genre == '') ? i-- : genres[i] = genre;
     }
+
+    genres.forEach((genre, i) => {
+      console.log(`Любимый жанр ${i + 1} - это ${genre}`);
+    });
   },
   showMyDB: function(hidden) {
     (!hidden) ? console.log(this) : console.log('Sorry, data base is privat.');
@@ -56,5 +60,6 @@ const personalMovieDB = {
   },
 };
 
-personalMovieDB.toggleVisibleMyDB();
-personalMovieDB.showMyDB(personalMovieDB.privat);
+// personalMovieDB.toggleVisibleMyDB();
+// personalMovieDB.showMyDB(personalMovieDB.privat);
+// personalMovieDB.writeYourGenres(personalMovieDB.genres);
